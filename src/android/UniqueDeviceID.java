@@ -2,11 +2,11 @@ package hu.dpal.phonegap.plugins;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
-import org.json.JSONException;
 
 import android.content.Context;
+import android.provider.Settings.Secure;
+import android.telephony.TelephonyManager;
 
 public class UniqueDeviceID extends CordovaPlugin {
 
@@ -15,15 +15,16 @@ public class UniqueDeviceID extends CordovaPlugin {
         
         if (action.equals("get")) {
             
-            TelephonyManager tm = (TelephonyManager) callbackContext.getSystemService(Context.TELEPHONY_SERVICE);
+            Context context = cordova.getActivity().getApplicationContext();
+            TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
 
             String uuid;
-            String androidID = Secure.getString(callbackContext.getContentResolver(), Secure.ANDROID_ID);
+            String androidID = Secure.getString(context.getContentResolver(), Secure.ANDROID_ID);
             String deviceID = tm.getDeviceId();
             String simID = tm.getSimSerialNumber();
             
             if ("9774d56d682e549c".equals(androidID) || androidID == null) {
-                andoridID = "";
+                androidID = "";
             } 
             
             if (deviceID == null) {
