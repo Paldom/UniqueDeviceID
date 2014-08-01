@@ -3,6 +3,7 @@ package hu.dpal.phonegap.plugins;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
+import org.json.JSONException;
 
 import android.content.Context;
 import android.provider.Settings.Secure;
@@ -11,7 +12,7 @@ import android.telephony.TelephonyManager;
 public class UniqueDeviceID extends CordovaPlugin {
 
     @Override
-    public boolean execute(String action, JSONArray data, CallbackContext callbackContext) {
+    public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
         
         if (action.equals("get")) {
             
