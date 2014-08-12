@@ -1,50 +1,50 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
-<plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
-           id="hu.dpal.phonegap.plugins.UniqueDeviceID"
-      version="1.0.0">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
+        id="hu.dpal.phonegap.plugins.UniqueDeviceID" 
+        version="1.0.0">
 
     <name>UniqueDeviceID</name>
-    
-	<description>
-			PhoneGap / Cordova unique device id (UUID) plugin for Android and iOS. Remains the same after app uninstall.
-	</description>
-	<license>MIT</license>
-	<keywords>phonegap,cordova,android,device,id,uuid,unique</keywords>
 
-	<js-module src="www/uniqueid.js" name="UniqueDeviceID">
-	  <merges target="window.plugins.uniqueDeviceID" />
-	</js-module>
-	
-	<!-- android -->
+    <description>
+        PhoneGap / Cordova unique device id (UUID) plugin for Android and iOS. Remains the same after app uninstall.
+    </description>
+    <license>MIT</license>
+    <keywords>phonegap,cordova,android,device,id,uuid,unique</keywords>
+
+    <js-module src="www/uniqueid.js" name="UniqueDeviceID">
+        <merges target="window.plugins.uniqueDeviceID" />
+    </js-module>
+
+    <!-- android -->
     <platform name="android">
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="UniqueDeviceID">
-                <param name="android-package" value="hu.dpal.phonegap.plugins.UniqueDeviceID"/>
+                <param name="android-package" value="hu.dpal.phonegap.plugins.UniqueDeviceID" />
             </feature>
         </config-file>
-        
+
         <config-file target="AndroidManifest.xml" parent="/*">
             <uses-permission android:name="android.permission.READ_PHONE_STATE" />
         </config-file>
-        
+
         <source-file src="src/android/UniqueDeviceID.java" target-dir="src/hu/dpal/phonegap/plugins" />
-        
+
     </platform>
 
-	<!-- ios -->
-	<platform name="ios">
-	  <config-file target="config.xml" parent="/*">
-		<feature name="UniqueDeviceID">
-		  <param name="ios-package" value="CDVUniqueDeviceID"/>
-		</feature>
-	  </config-file>
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="UniqueDeviceID">
+                <param name="ios-package" value="CDVUniqueDeviceID" />
+            </feature>
+        </config-file>
 
-	  <header-file src="src/ios/CDVUniqueDeviceID.h" />
-	  <source-file src="src/ios/CDVUniqueDeviceID.m" />
-        
-      <framework src="AdSupport.framework" />
-	</platform>
-	
+        <header-file src="src/ios/CDVUniqueDeviceID.h" />
+        <source-file src="src/ios/CDVUniqueDeviceID.m" />
+
+        <framework src="AdSupport.framework" />
+    </platform>
+
 </plugin>
 
