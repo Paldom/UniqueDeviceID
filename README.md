@@ -12,7 +12,7 @@ or
 Usage:
 
     // Get UUID
-    window.plugins.pinDialog.prompt(success, fail);
+    window.plugins.uniqueDeviceID.get(success, fail);
 
 Success callback function:
 
