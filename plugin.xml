@@ -2,7 +2,7 @@
 
 <plugin xmlns="http://cordova.apache.org/ns/plugins/1.0"
            id="hu.dpal.phonegap.plugins.UniqueDeviceID"
-      version="0.9.0">
+      version="1.0.0">
 
     <name>UniqueDeviceID</name>
     
