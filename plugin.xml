@@ -3,7 +3,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" 
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="hu.dpal.phonegap.plugins.UniqueDeviceID" 
-        version="1.0.0">
+        version="1.1.0">
 
     <name>UniqueDeviceID</name>
 
@@ -38,13 +38,17 @@
         <config-file target="config.xml" parent="/*">
             <feature name="UniqueDeviceID">
                 <param name="ios-package" value="CDVUniqueDeviceID" />
+                <param name="onload" value="true" />
             </feature>
         </config-file>
+        
+        <header-file src="src/ios/UICKeyChainStore.h" />
+        <source-file src="src/ios/UICKeyChainStore.m" />
 
         <header-file src="src/ios/CDVUniqueDeviceID.h" />
         <source-file src="src/ios/CDVUniqueDeviceID.m" />
 
-        <framework src="AdSupport.framework" />
+        <framework src="Security.framework" />
     </platform>
 
 </plugin>
