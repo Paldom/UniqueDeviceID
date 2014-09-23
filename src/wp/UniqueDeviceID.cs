@@ -1,5 +1,5 @@
 using System;
-using Microsoft.Phone.Info;
+using Windows.Phone.System.Analytics;
 using WPCordovaClassLib.Cordova;
 using WPCordovaClassLib.Cordova.Commands;
 using WPCordovaClassLib.Cordova.JSON;
@@ -11,8 +11,8 @@ namespace WPCordovaClassLib.Cordova.Commands
         public void get(string options)
         {
 
-            byte[] id = (byte[])Microsoft.Phone.Info.DeviceExtendedProperties.GetValue("DeviceUniqueId");
-            string uuid = Convert.ToBase64String(id);
+            string uuid = Windows.Phone.System.Analytics.HostInformation.PublisherHostId;
+            uuid = uuid.Substring(0, 32);
 
             DispatchCommandResult(new PluginResult(PluginResult.Status.OK, uuid));
 
