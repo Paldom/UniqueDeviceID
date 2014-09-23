@@ -58,7 +58,11 @@
         <feature name="UniqueDeviceID">
           <param name="wp-package" value="UniqueDeviceID"/>
         </feature>
-      </config-file
+      </config-file>
+
+      <config-file target="Properties/WMAppManifest.xml" parent="/Deployment/App/Capabilities">
+        <Capability Name="ID_CAP_IDENTITY_DEVICE" />
+      </config-file>
 
       <source-file src="src/wp/UniqueDeviceID.cs" />
     </platform>
