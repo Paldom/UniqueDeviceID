@@ -1,8 +1,7 @@
 UniqueDeviceID
 ==============
 
-PhoneGap / Cordova unique device id (UUID) plugin for Android and iOS. Remains the same after app uninstall.
-On iOS it changes when user reset advertisingIdentifier.
+PhoneGap / Cordova unique device id (UUID) plugin for Android, iOS and Windows Phone 8. Remains the same after app uninstall.
 
 Installation:
 
