@@ -5,15 +5,17 @@ PhoneGap / Cordova unique device id (UUID) plugin for Android, iOS and Windows P
 
 ## Installation
 
-Latest stable release: ```phonegap local plugin add hu.dpal.phonegap.plugins.uniquedeviceid```  
-or ```cordova plugin add hu.dpal.phonegap.plugins.uniquedeviceid```
+Latest stable release: ```phonegap local plugin add cordova-plugin-uniquedeviceid```  
+or ```cordova plugin add cordova-plugin-uniquedeviceid```
 
 Current state from git: ```phonegap local plugin add https://github.com/Paldom/UniqueDeviceID.git```  
 or ```cordova plugin add https://github.com/Paldom/UniqueDeviceID.git```
 
 ## Installation - PhoneGap Build 
 
-Add following to config.xml: ```<gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" />```
+Add following to config.xml: ```<gap:plugin name="cordova-plugin-uniquedeviceid" source="npm" />```
+
+For older versions, use the following: ```<gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" version="1.2.0" />```
 or ```<gap:plugin name="hu.dpal.phonegap.plugins.uniquedeviceid" source="plugins.cordova.io" />```
 
 ## Supported Platforms
