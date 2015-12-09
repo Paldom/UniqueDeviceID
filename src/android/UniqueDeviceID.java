@@ -45,15 +45,8 @@ public class UniqueDeviceID extends CordovaPlugin {
 
     }
 
-    @Override
     public void onRequestPermissionResult(int requestCode, String[] permissions,
                                           int[] grantResults) throws JSONException {
-        for (int r : grantResults) {
-            if (r == PackageManager.PERMISSION_DENIED) {
-                this.callbackContext.error("Runtime permission denied by user");
-                return;
-            }
-        }
         if(requestCode == REQUEST_READ_PHONE_STATE){
             getDeviceId();
         }
