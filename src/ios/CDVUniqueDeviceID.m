@@ -18,6 +18,14 @@
         
         NSString *uuid = [UICKeyChainStore stringForKey:@"uuid"];
 
+        if ([uuid length] == 0) {
+            uuid = nil;
+        }
+
+        if ([uuidUserDefaults length] == 0) {
+            uuidUserDefaults = nil;
+        }
+
         if ( uuid && !uuidUserDefaults) {
             [defaults setObject:uuid forKey:@"uuid"];
             [defaults synchronize];
